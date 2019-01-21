@@ -29,12 +29,16 @@ h2 {
         $b = count($a);
         for($i = 0; $i < $b - 1; $i++) {
             if ($a[$i] > $a[$i + 1]) {
+        // nếu vẫn còn cặp số so sánh thỏa mãn điều kiện này thì ta sẽ tạo 1 biến là $test để nhận biết về vc còn có cặp số
+        // nào thỏa mãn điều kiện hay ko
             $test = 10;
              $tmp = $a[$i];
              $a[$i] = $a[$i+1];
              $a[$i+1] = $tmp;
             }
          }
+         // nếu còn cặp số thỏa mãn tức là biến $test đã tồn tại thì ta sẽ gọi tiếp lại hàm này. còn ko thì tức là mảng đã đc sắp xếp
+         // đúng nên ta sẽ in ra kết quả.
          if (isset($test)) {
             sorting($a);
          } else {
@@ -50,7 +54,7 @@ h2 {
         echo'Before sorting : '.$_POST['input'];
         $h = trim($_POST['input']);
         $h = explode(" ",$h);
-        sorting($h);
+        var_dump(sorting($h));
     }
     
 ?>
