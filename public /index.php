@@ -50,11 +50,13 @@ h2 {
             return $a;
          }
     }
+    
     if (isset($_POST['submit'])) {
         echo'Before sorting : '.$_POST['input'];
         $h = trim($_POST['input']);
         $h = explode(" ",$h);
-        var_dump(sorting($h));
+        sorting($h);
+        // var_dump(sorting($h));
     }
     
 ?>
